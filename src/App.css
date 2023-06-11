@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+/* write your css here */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p{
+    font-size: 1.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1{
+    font-size: 6rem;
+}
+
+.app{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: rgba(0, 0,0,0.4);
+    color: #fff;
+    z-index: 10;
+}
+
+.app:before{
+content:"" ;
+background: url('./sunset.jpg') no-repeat center/cover;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: -1;
+
+
+}
+
+.container{
+    min-width: 400px;
+    /* height: 80%; */
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    align-items: center;
+}
+
+.top{
+width: 80%;
+
+/* margin: 1rem auto; */
+/* border: 1px solid red; */
+margin-top: 50px;
+
+}
+
+.desc{
+    position: relative;
+    left: 90%;
+    transform-origin: 0 0;
+    /* font-size: 0px; */
+    transform: rotate(270deg);
+}
+
+.desc p{
+    font-size: 35px;
+}
+
+.bottom{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.bottom div{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+
+    padding: .7rem 1.5rem;
+    font-size: 1.2rem;
+    background-repeat: 25px;
+    border: 1px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.1);
+    border-radius: 25px;
+    color: #f8f8f8;
+    
+}
+
+
+::placeholder{
+    color: #f8f8f8;
+}
+
+.temp{
+    margin-top: 10px;
+}
+
+span{
+    font-size: small;
+}
+
+.tempspan{
+    font-size: 50px;
+}
+
+input:focus {
+    outline: none;
   }
+
+
+
+  .spinner {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    overflow-x: hidden;
+    margin-top: 200px;
+}
+.spinner::before,
+.spinner::after {    
+    content:"";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side,hsl(18, 100%, 83%) 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    animation: s2 1s infinite;
+}
+.spinner::before {
+  margin:4px;
+  filter:hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes s2{ 
+  100%{transform: rotate(.5turn)}
 }
